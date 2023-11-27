@@ -24,8 +24,8 @@ export default function SearchEdit() {
       event_status: '',
       phone: '',
       event_url: '',
-      event_start: new Date(),
-      event_end: new Date(),
+      event_start: new Date().toISOString().substring(0, 10) as any,
+      event_end: new Date().toISOString().substring(0, 10) as any,
     },
   });
 
@@ -58,10 +58,13 @@ export default function SearchEdit() {
     //giving you access to whatever you have stored in config
     const data = ComposerHandler.getPayload() as { config: PowerUpFormData };
 
+    if (!data?.config) return;
+
     methods.setValue('contact_info', data?.config?.contact_info);
     methods.setValue('contact_name', data?.config?.contact_name);
     methods.setValue('email', data?.config?.email);
     methods.setValue('event_agenda', data?.config?.event_agenda);
+
     methods.setValue(
       'event_end',
       new Date(data?.config?.event_end ?? '')

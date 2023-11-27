@@ -15,8 +15,8 @@ export default function SearchView() {
   const methods = useForm({
     resolver: yupResolver(schema),
     defaultValues: {
-      event_start: new Date(),
-      event_end: new Date(),
+      event_start: new Date().toISOString().substring(0, 10) as any,
+      event_end: new Date().toISOString().substring(0, 10) as any,
     },
   });
 
