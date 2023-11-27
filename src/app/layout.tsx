@@ -7,7 +7,7 @@ import DashboardIcon from '@mui/icons-material/Dashboard';
 import ThemeRegistry from '@/app/components/ThemeRegistry/ThemeRegistry';
 
 export const metadata = {
-  title: 'Next.js App Router + Material UI v5',
+  title: 'PowerUp Nextjs Headless Demo',
   description: 'Next.js App Router + Material UI v5',
 };
 
